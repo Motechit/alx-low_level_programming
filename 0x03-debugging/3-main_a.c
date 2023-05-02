@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include "main.h"
+int largest_number(int a, int b, int c);
+int convert_day(int month, int day);
+
 
 /**
 * main - takes a date and prints how many days are left in the year, taking
