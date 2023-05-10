@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * wildcmp: Compares strings
- * s1 is a pointer to string params
- * s2 is a pointer to string params
- * It returns 0
+ * wildcmp - It compares strings
+ * @s1: is a pointer to string params
+ * @s2: is a pointer to string params
+ * Return: It returns 0
  */
 
 int wildcmp(char *s1, char *s2)
