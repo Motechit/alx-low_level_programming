@@ -18,11 +18,10 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident);
 void close_elf(int elf);
 
 /**
- * check_elf - It checks whether the file is an ELF file
- * @e_ident: This is a ptr to an array containing the ELF magic nums
- * Description: If the file is not an ELF file give - exit code 98
+ * check_elf - It checks if a file is an ELF file
+ * @e_ident: It is a ptr to an array containing the ELF magic nums
+ * Description: If the file is not an ELF file give - exit code 98.
  */
-
 void check_elf(unsigned char *e_ident)
 {
 	int index;
@@ -39,18 +38,16 @@ void check_elf(unsigned char *e_ident)
 		}
 	}
 }
-
 /**
- * print_magic - it prints the magic nums of an ELF header
- * @e_ident: This is the ptr to an array containing the ELF magic numbers
- * Descriptio: The magic num are separated by spaces
+ * print_magic - It prints the magic nums of an ELF header
+ * @e_ident: This ptr to an array containing the ELF magic nums
+ * Description: Magic numbers are separated by spaces
  */
-
 void print_magic(unsigned char *e_ident)
 {
 	int index;
 
-	printf(" Magic: ");
+	printf("  Magic:   ");
 
 	for (index = 0; index < EI_NIDENT; index++)
 	{
@@ -64,13 +61,12 @@ void print_magic(unsigned char *e_ident)
 }
 
 /**
- * print_class - IT Prints the class of an ELF header
- * @e_ident: This is a ptr to an arrayyy containing the ELF class
+ * print_class - It prints the class of an ELF header.
+ * @e_ident: This is a ptr to an array containing the ELF class
  */
-
 void print_class(unsigned char *e_ident)
 {
-	printf(" Class: ");
+	printf("  Class:                             ");
 
 	switch (e_ident[EI_CLASS])
 	{
@@ -89,13 +85,13 @@ void print_class(unsigned char *e_ident)
 }
 
 /**
- * print_data - This prints the data of an ELF header
- * @e_ident: This is a ptr to an array containing the ELF class
+ * print_data - Prints the data of an ELF header.
+ * @e_ident: A pointer to an array containing the ELF class.
  */
 
 void print_data(unsigned char *e_ident)
 {
-	printf(" Data: ");
+	printf("  Data:                              ");
 
 	switch (e_ident[EI_DATA])
 	{
@@ -115,13 +111,12 @@ void print_data(unsigned char *e_ident)
 
 /**
  * print_version - It prints the version of an ELF header
- * @e_ident: This is a ptr to an array containing the ELF version
+ * @e_ident: This is A ptr to an array containing the ELF version
  */
-
 void print_version(unsigned char *e_ident)
 {
-	 printf(" Version: %d",
-			  e_ident[EI_VERSION]);
+	printf("  Version:                           %d",
+	       e_ident[EI_VERSION]);
 
 	switch (e_ident[EI_VERSION])
 	{
@@ -135,13 +130,13 @@ void print_version(unsigned char *e_ident)
 }
 
 /**
- * print_osabi - This prints the OS/ABI of an ELF header
- * @e_ident: This is a ptr to an array containing the ELF version
+ * print_osabi - It actually prints the OS/ABI of an ELF header
+ * @e_ident: It is the ptr to an array containing the ELF version
  */
 
 void print_osabi(unsigned char *e_ident)
 {
-	printf(" OS/ABI: ");
+	printf("  OS/ABI:                            ");
 
 	switch (e_ident[EI_OSABI])
 	{
@@ -181,20 +176,20 @@ void print_osabi(unsigned char *e_ident)
 }
 
 /**
- * print_abi - This helps to print the ABI version of an ELF header
- * @e_ident: This is a pter to an array containing the ELF ABI version
+ * print_abi - It prints the ABI version of an ELF header
+ * @e_ident: It is the ptr to an array containing the ELF ABI version
  */
 
 void print_abi(unsigned char *e_ident)
 {
-	printf(" ABI Version: %d\n",
-		e_ident[EI_ABIVERSION]);
+	printf("  ABI Version:                       %d\n",
+	       e_ident[EI_ABIVERSION]);
 }
 
 /**
- * print_type - It prrints the type of an ELF header
- * @e_type: This is infact the ELF type
- * @e_ident: This is the ptr to an array containing the ELF class
+ * print_type - It prints the type of an ELF header
+ * @e_type: This is ELF type
+ * @e_ident: A ptr to an array containing the ELF class
  */
 
 void print_type(unsigned int e_type, unsigned char *e_ident)
@@ -202,7 +197,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 
-	printf(" Type: ");
+	printf("  Type:                              ");
 
 	switch (e_type)
 	{
@@ -227,14 +222,14 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 }
 
 /**
- * print_entry - It prints the entry point of an ELF header
- * @e_entry: This is the address of the ELF entry point
- * @e_ident: This is a ptr to an array containing the ELF class
+ * print_entry - it prints the entry point of an ELF header
+ * @e_entry: This is the addr of the ELF entry point
+ * @e_ident: t'is a ptr to an array containing the ELF class
  */
 
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
-	printf(" Entry point address: ");
+	printf("  Entry point address:               ");
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
@@ -251,9 +246,9 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 }
 
 /**
- * close_elf - It closes a file that is an ELF file
- * @elf: This is the file descriptor of the ELF file
- * Description: If the file can't be closed give - exit code 98
+ * close_elf - It closes an ELF file
+ * @elf: This' the file descriptor of the ELF file
+ * Description: If the file cannot be closed give - exit code 98.
  */
 
 void close_elf(int elf)
@@ -267,11 +262,13 @@ void close_elf(int elf)
 }
 
 /**
- * main - It displays the information contained in the ELF header
- * @argc: This is the num of args supplied to the prog
- * @argv: It is aan array of ptrs to the args
- * Return: It returns 0 if successful
- * Description: If the file is not ELF File/the fxn fails give - exit code 98
+ * main - It displays the information contained in the
+ *        ELF header at the start of an ELF file
+ * @argc: This is the num of args supplied to the program
+ * @argv: This' an array of ptrs to the args
+ * Return: 0 if successful
+ * Description: If the file is not an ELF File or
+ *              the function fails - exit code 98.
  */
 
 int main(int __attribute__((__unused__)) argc, char *argv[])
