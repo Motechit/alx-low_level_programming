@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Island Perimeter"""
+""" Island Perimeter """
 
 
 def island_perimeter(grid):
-    """This is the Island Perimeter function"""
-    perim = 0
+    """ Island Perimeter """
+    peri = 0
     gl = []
     for i in range(len(grid)):
         for j in range(len(grid[i])):
@@ -12,9 +12,9 @@ def island_perimeter(grid):
     for i in range(len(gl)):
         if i < len(gl) - 1 and i > 0:
             if gl[i] == 0 and gl[i + 1] == 1 or gl[i] == 0 and gl[i - 1] == 1:
-                perim += 1
-    if perim % 2 == 0:
-        perim *= 2
+                peri += 1
+    if peri % 2 == 0:
+        peri *= 2
     else:
-        perim = (perim * 2) - 1
-    return perim
+        peri = (peri * 2) - 1
+    return peri
