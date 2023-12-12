@@ -1,11 +1,11 @@
 #include "search_algos.h"
 
 /**
- * linear_search - linearly search for a number in an array
- * @array: pointer to the first element of the array to search
- * @size: number of elements of the arrary to search in
- * @value: target value to search for
- * Return: return the index the value is located else -1
+ * linear_search - It linearly searches for a num in an array
+ * @array: This is the ptr to the 1st element of the array to search
+ * @size: This is the num of elements of the arrary to search in
+ * @value: This is the target value to search for
+ * Return: It returns the index the value is located else -1
  */
 
 int linear_search(int *array, size_t size, int value)
