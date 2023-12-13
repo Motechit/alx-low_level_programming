@@ -7,7 +7,6 @@
  * @value: This is the target value to search for
  * Return: It returns the index the value is located else -1
  */
-
 int linear_search(int *array, size_t size, int value)
 {
 	size_t i = 0;

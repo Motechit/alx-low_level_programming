@@ -7,7 +7,6 @@
  * @value: This is the target value to search for
  * Return: This is the target value index else -1
  */
-
 int binary_search(int *array, size_t size, int value)
 {
 	size_t i, start = 0, end = size - 1;
